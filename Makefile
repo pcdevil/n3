@@ -13,6 +13,7 @@ NODE := $(shell which node)
 default: help
 
 include ${TASKS_DIR}/install-lint.mk
+include ${TASKS_DIR}/install-nodemon.mk
 include ${TASKS_DIR}/install-test.mk
 include ${TASKS_DIR}/npm-tasks.mk
 
