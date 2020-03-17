@@ -12,6 +12,7 @@ NODE := $(shell which node)
 
 default: help
 
+include ${TASKS_DIR}/install-lint.mk
 include ${TASKS_DIR}/install-test.mk
 
 .PHONY: help .set-package-json-with-jq
