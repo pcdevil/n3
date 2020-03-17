@@ -14,6 +14,7 @@ default: help
 
 include ${TASKS_DIR}/install-lint.mk
 include ${TASKS_DIR}/install-test.mk
+include ${TASKS_DIR}/npm-tasks.mk
 
 .PHONY: help .set-package-json-with-jq
 
