@@ -1,4 +1,4 @@
-.PHONY: lint start start-watch test test-watch .npm-task
+.PHONY: lint start start-watch test test-watch .npm-task .npm-install-dev-dependencies
 
 lint: ## run the "lint" npm task
 lint: NPM_TASK := lint
@@ -22,3 +22,6 @@ test-watch: .npm-task
 
 .npm-task:
 	npm run ${NPM_TASK}
+
+.npm-install-dev-dependencies:
+	$(NPM) install --save-dev ${NPM_PACKAGES}
