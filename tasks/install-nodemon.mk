@@ -1,4 +1,5 @@
-.PHONY: install-lint .install-nodemon-packages .install-nodemon-copy-setup .install-nodemon-npm-tasks
+.PHONY: install-lint
+.PHONY: .install-nodemon-packages .install-nodemon-copy-setup .install-nodemon-npm-tasks
 
 install-nodemon: ## install monitoring framework nodemon
 install-nodemon: .install-nodemon-packages .install-nodemon-copy-setup .install-nodemon-npm-tasks

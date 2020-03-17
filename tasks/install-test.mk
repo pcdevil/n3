@@ -1,4 +1,5 @@
-.PHONY: install-test .install-test-packages .install-test-copy-setup .install-test-npm-tasks
+.PHONY: install-test
+.PHONY: .install-test-packages .install-test-copy-setup .install-test-npm-tasks
 
 install-test: ## install test framework mocha with chai and sinon included
 install-test: .install-test-packages .install-test-copy-setup .install-test-npm-tasks

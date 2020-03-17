@@ -1,4 +1,5 @@
-.PHONY: install-lint .install-lint-packages .install-lint-copy-setup .install-lint-npm-tasks
+.PHONY: install-lint
+.PHONY: .install-lint-packages .install-lint-copy-setup .install-lint-npm-tasks
 
 install-lint: ## install lint framework eslint with google rules
 install-lint: .install-lint-packages .install-lint-copy-setup .install-lint-npm-tasks

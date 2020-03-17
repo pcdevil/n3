@@ -17,7 +17,8 @@ include ${TASKS_DIR}/install-nodemon.mk
 include ${TASKS_DIR}/install-test.mk
 include ${TASKS_DIR}/npm-tasks.mk
 
-.PHONY: help .set-package-json-with-jq
+.PHONY: help
+.PHONY: .set-package-json-with-jq
 
 help:
 	@fgrep -h "##" ${MAKEFILE_LIST} | fgrep -v fgrep | sed -e 's/\\$$//' -e 's/:.*#/: #/' | column -t -s '##'
