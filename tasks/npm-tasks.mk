@@ -2,6 +2,8 @@
 .PHONY: lint start start-watch test test-watch
 .PHONY: .npm-task .npm-install-dev-dependencies
 
+NPM := $(shell which npm)
+
 l: ##  -> lint
 l: lint
 

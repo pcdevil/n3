@@ -7,7 +7,6 @@ PROJECT_DIR := ${PWD}
 PACKAGE_JSON := ${PROJECT_DIR}/package.json
 
 NVM := $(shell which nvm)
-NPM := $(shell which npm)
 NODE := $(shell which node)
 
 default: help
