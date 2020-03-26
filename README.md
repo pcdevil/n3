@@ -9,6 +9,20 @@ Initially I named the project `n`, but I quickly realised there is already a
 series would be `n2`, I liked the sound of `n³` more and decided to just go with
 this solution.
 
+## Table of Contents
+- **[Prerequires](#prerequires)**
+- **[Installation](#installation)**
+- **[Usage](#usage)**
+- **[Tasks](#tasks)**
+  - **[General purposes](#general-purposes)**
+    - **[`help`](#help)**
+  - **[Install related](#install-related)**
+    - **[`install-lint`](#install-lint)**
+    - **[`install-nodemon`](#install-nodemon)**
+    - **[`install-test`](#install-test)**
+  - **[npm related](#npm-related)**
+- **[License](#license)**
+
 ## Prerequires
 To use it make sure the following application are installed on the system:
 - [git] (for install)
