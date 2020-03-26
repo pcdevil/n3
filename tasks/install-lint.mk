@@ -11,6 +11,5 @@ install-lint: .install-lint-packages .install-lint-copy-setup .install-lint-npm-
 	cp ${ASSETS_DIR}/eslintrc.json ${PROJECT_DIR}/.eslintrc
 
 .install-lint-npm-tasks:
-.install-lint-npm-tasks: JQ_SCRIPT := .scripts.\"lint\" =
-.install-lint-npm-tasks: JQ_SCRIPT += \"eslint --fix 'src/**/*.js' 'test/**/*.js'\"
+.install-lint-npm-tasks: JQ_SCRIPT_FILE := ${N3_DIR}/jq-scripts/set-lint-task.jq
 .install-lint-npm-tasks: .set-package-json-with-jq

@@ -26,5 +26,8 @@ help:
 .set-package-json-with-jq: TEMP_FILE := $(shell mktemp)
 .set-package-json-with-jq:
 	cp ${PACKAGE_JSON} ${TEMP_FILE}
-	jq --raw-output "${JQ_SCRIPT}" ${TEMP_FILE} >${PACKAGE_JSON}
+	jq \
+		--from-file ${JQ_SCRIPT_FILE} \
+		--raw-output \
+		${TEMP_FILE} >${PACKAGE_JSON}
 	rm ${TEMP_FILE}

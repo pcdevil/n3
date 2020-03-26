@@ -12,8 +12,5 @@ install-test: .install-test-packages .install-test-copy-setup .install-test-npm-
 	cp ${ASSETS_DIR}/mocha-setup.js ${PROJECT_DIR}/test/setup.js
 
 .install-test-npm-tasks:
-.install-test-npm-tasks: JQ_SCRIPT := .scripts.\"test\" =
-.install-test-npm-tasks: JQ_SCRIPT += \"mocha 'test/setup.js' 'test/**/*.spec.js'\"
-.install-test-npm-tasks: JQ_SCRIPT += | .scripts.\"test:watch\" =
-.install-test-npm-tasks: JQ_SCRIPT += \"npm run test -- --watch --reporter min\"
+.install-test-npm-tasks: JQ_SCRIPT_FILE := ${N3_DIR}/jq-scripts/set-test-task.jq
 .install-test-npm-tasks: .set-package-json-with-jq
