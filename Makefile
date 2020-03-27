@@ -6,7 +6,6 @@ TASKS_DIR := ${N3_DIR}/tasks
 PROJECT_DIR := ${PWD}
 PACKAGE_JSON := ${PROJECT_DIR}/package.json
 
-NVM := $(shell which nvm)
 NODE := $(shell which node)
 
 default: help
