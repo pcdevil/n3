@@ -40,7 +40,7 @@ t-w: ##  -> test-watch
 t-w: test-watch
 
 .npm-task:
-	npm run ${NPM_TASK}
+	$(NPM) run ${NPM_TASK}
 
 .npm-install-dev-dependencies:
 	$(NPM) install --save-dev ${NPM_PACKAGES}
