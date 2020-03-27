@@ -6,6 +6,7 @@ TASKS_DIR := ${N3_DIR}/tasks
 
 PROJECT_DIR := ${PWD}
 PACKAGE_JSON := ${PROJECT_DIR}/package.json
+PACKAGE_LOCK := ${PROJECT_DIR}/package-lock.json
 
 NODE := $(shell which node)
 
@@ -18,18 +19,22 @@ include ${TASKS_DIR}/npm-tasks.mk
 include ${TASKS_DIR}/setup-author.mk
 include ${TASKS_DIR}/setup-license.mk
 include ${TASKS_DIR}/setup-nvm.mk
+include ${TASKS_DIR}/setup-package-lock.mk
 
 .PHONY: help
-.PHONY: .set-package-json-with-jq
+.PHONY: .run-jq-script-on-file .set-package-json-with-jq
 
 help:
 	@fgrep -h "##" ${MAKEFILE_LIST} | fgrep -v fgrep | sed -e 's/\\$$//' -e 's/:.*#/: #/' | column -t -s '##'
 
-.set-package-json-with-jq:
-.set-package-json-with-jq: TEMP_FILE := $(shell mktemp)
-.set-package-json-with-jq:
+.run-jq-script-on-file:
 	jq \
 		--from-file ${JQ_SCRIPTS_DIR}/${JQ_SCRIPT_FILE} \
 		--raw-output \
-		${PACKAGE_JSON} >${TEMP_FILE}
-	mv ${TEMP_FILE} ${PACKAGE_JSON}
+		${INPUT_FILE} >${OUTPUT_FILE}
+
+.set-package-json-with-jq:
+.set-package-json-with-jq: INPUT_FILE := ${PACKAGE_JSON}
+.set-package-json-with-jq: OUTPUT_FILE := $(shell mktemp)
+.set-package-json-with-jq: .run-jq-script-on-file
+	mv ${OUTPUT_FILE} ${INPUT_FILE}

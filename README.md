@@ -24,6 +24,7 @@ this solution.
     - **[`setup-author`](#setup-author)**
     - **[`setup-license`](#setup-license)**
     - **[`setup-nvm`](#setup-nvm)**
+    - **[`setup-package-lock`](#setup-package-lock)**
   - **[npm related](#npm-related)**
 - **[License](#license)**
 
@@ -103,6 +104,9 @@ version in the `package.json` too.
 By default, the current version will be used (determined with the `node
 --version` command), but this can be overwritten with the `NODE_VERSION` env
 variable.
+
+#### `setup-package-lock`
+Creates an empty(ish) `package-lock.json` file to accompany the `package.json`.
 
 ### npm related
 While the main goal of `n³` is to help with a project start, it also provides
