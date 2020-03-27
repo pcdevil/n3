@@ -22,6 +22,7 @@ this solution.
     - **[`install-test`](#install-test)**
   - **[Setup related](#setup-related)**
     - **[`setup-author`](#setup-author)**
+    - **[`setup-license`](#setup-license)**
     - **[`setup-nvm`](#setup-nvm)**
   - **[npm related](#npm-related)**
 - **[License](#license)**
@@ -90,6 +91,10 @@ Sets the author inside the `package.json`. There are three available information
 to be determined: _name_, _email_ and _url_ - by default the task invokes
 **git** to get them, but with the `AUTHOR_NAME`, `AUTHOR_EMAIL`, `AUTHOR_URL`
 (respectively) env variables all can be overwritten.
+
+#### `setup-license`
+Sets the license in the `package.json`. By default, this will be _"MIT"_, but
+can be overwritten by `LICENSE` env variable.
 
 #### `setup-nvm`
 Populates a `.nvmrc` file with the a **Node.js** version and stricts the engine

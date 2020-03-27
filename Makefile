@@ -15,6 +15,7 @@ include ${TASKS_DIR}/install-nodemon.mk
 include ${TASKS_DIR}/install-test.mk
 include ${TASKS_DIR}/npm-tasks.mk
 include ${TASKS_DIR}/setup-author.mk
+include ${TASKS_DIR}/setup-license.mk
 include ${TASKS_DIR}/setup-nvm.mk
 
 .PHONY: help
