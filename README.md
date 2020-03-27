@@ -20,6 +20,8 @@ this solution.
     - **[`install-lint`](#install-lint)**
     - **[`install-nodemon`](#install-nodemon)**
     - **[`install-test`](#install-test)**
+  - **[Setup related](#setup-related)**
+    - **[`setup-nvm`](#setup-nvm)**
   - **[npm related](#npm-related)**
 - **[License](#license)**
 
@@ -79,6 +81,16 @@ task will be created in the `package.json`: the first one is `test` which runs
 the mocha framework including the setup and with the files inside `test/` folder
 with `.spec.js` suffix, and the second one is `test:watch` which does the same
 but in watch mode.
+
+### Setup related
+
+#### `setup-nvm`
+Populates a `.nvmrc` file with the a **Node.js** version and stricts the engine
+version in the `package.json` too.
+
+By default, the current version will be used (determined with the `node
+--version` command), but this can be overwritten with the `NODE_VERSION` env
+variable.
 
 ### npm related
 While the main goal of `n³` is to help with a project start, it also provides
