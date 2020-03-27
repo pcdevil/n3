@@ -1,6 +1,7 @@
 N3_MAKE := $(lastword ${MAKEFILE_LIST})
 N3_DIR := $(shell dirname $(realpath ${N3_MAKE}))
 ASSETS_DIR := ${N3_DIR}/assets
+JQ_SCRIPTS_DIR := ${N3_DIR}/jq-scripts
 TASKS_DIR := ${N3_DIR}/tasks
 
 PROJECT_DIR := ${PWD}
@@ -28,7 +29,7 @@ help:
 .set-package-json-with-jq: TEMP_FILE := $(shell mktemp)
 .set-package-json-with-jq:
 	jq \
-		--from-file ${JQ_SCRIPT_FILE} \
+		--from-file ${JQ_SCRIPTS_DIR}/${JQ_SCRIPT_FILE} \
 		--raw-output \
 		${PACKAGE_JSON} >${TEMP_FILE}
 	mv ${TEMP_FILE} ${PACKAGE_JSON}

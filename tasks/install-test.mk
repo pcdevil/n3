@@ -12,5 +12,5 @@ install-test: .install-test-packages .install-test-copy-setup .install-test-npm-
 	cp ${ASSETS_DIR}/mocha-setup.js ${PROJECT_DIR}/test/setup.js
 
 .install-test-npm-tasks:
-.install-test-npm-tasks: JQ_SCRIPT_FILE := ${N3_DIR}/jq-scripts/set-test-task.jq
+.install-test-npm-tasks: JQ_SCRIPT_FILE := set-test-task.jq
 .install-test-npm-tasks: .set-package-json-with-jq
