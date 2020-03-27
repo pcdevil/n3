@@ -21,6 +21,7 @@ this solution.
     - **[`install-nodemon`](#install-nodemon)**
     - **[`install-test`](#install-test)**
   - **[Setup related](#setup-related)**
+    - **[`setup-author`](#setup-author)**
     - **[`setup-nvm`](#setup-nvm)**
   - **[npm related](#npm-related)**
 - **[License](#license)**
@@ -83,6 +84,12 @@ with `.spec.js` suffix, and the second one is `test:watch` which does the same
 but in watch mode.
 
 ### Setup related
+
+#### `setup-author`
+Sets the author inside the `package.json`. There are three available information
+to be determined: _name_, _email_ and _url_ - by default the task invokes
+**git** to get them, but with the `AUTHOR_NAME`, `AUTHOR_EMAIL`, `AUTHOR_URL`
+(respectively) env variables all can be overwritten.
 
 #### `setup-nvm`
 Populates a `.nvmrc` file with the a **Node.js** version and stricts the engine
