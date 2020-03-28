@@ -12,4 +12,5 @@ install-nodemon: .install-nodemon-packages .install-nodemon-copy-setup .install-
 
 .install-nodemon-npm-tasks:
 .install-nodemon-npm-tasks: JQ_SCRIPT_FILE := set-start-watch-task.jq
-.install-nodemon-npm-tasks: .set-package-json-with-jq
+.install-nodemon-npm-tasks:
+	$(set-package-json-with-jq)

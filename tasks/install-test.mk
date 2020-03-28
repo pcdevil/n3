@@ -13,4 +13,5 @@ install-test: .install-test-packages .install-test-copy-setup .install-test-npm-
 
 .install-test-npm-tasks:
 .install-test-npm-tasks: JQ_SCRIPT_FILE := set-test-task.jq
-.install-test-npm-tasks: .set-package-json-with-jq
+.install-test-npm-tasks:
+	$(set-package-json-with-jq)

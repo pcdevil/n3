@@ -22,19 +22,20 @@ include ${TASKS_DIR}/setup-nvm.mk
 include ${TASKS_DIR}/setup-package-lock.mk
 
 .PHONY: help
-.PHONY: .run-jq-script-on-file .set-package-json-with-jq
 
 help:
 	@fgrep -h "##" ${MAKEFILE_LIST} | fgrep -v fgrep | sed -e 's/\\$$//' -e 's/:.*#/: #/' | column -t -s '##'
 
-.run-jq-script-on-file:
+define run-jq-script-on-file =
 	jq \
 		--from-file ${JQ_SCRIPTS_DIR}/${JQ_SCRIPT_FILE} \
 		--raw-output \
 		${INPUT_FILE} >${OUTPUT_FILE}
+endef
 
-.set-package-json-with-jq:
-.set-package-json-with-jq: INPUT_FILE := ${PACKAGE_JSON}
-.set-package-json-with-jq: OUTPUT_FILE := $(shell mktemp)
-.set-package-json-with-jq: .run-jq-script-on-file
+define set-package-json-with-jq =
+	$(eval INPUT_FILE := ${PACKAGE_JSON})
+	$(eval OUTPUT_FILE := $(shell mktemp))
+	$(run-jq-script-on-file)
 	mv ${OUTPUT_FILE} ${INPUT_FILE}
+endef
