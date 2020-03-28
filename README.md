@@ -70,9 +70,13 @@ Installs [ESLint] and [Google's config] as dev-dependency. Creates an
 `.eslintrc` config file to bootstrap and fine-tune the config and it also adds a
 `lint` task in the `package.json` file to run the linter.
 
+---
+
 #### `install-nodemon`
 Installs [nodemon] as dev-dependency, and creates a basic config for it too.
 Additionally it adds a `start:watch` task in the `package.json` as well.
+
+---
 
 #### `install-test`
 Installs the [Mocha] test framework, [Chai] assertion library, [Sinon.JS]
@@ -93,9 +97,13 @@ to be determined: _name_, _email_ and _url_ - by default the task invokes
 **git** to get them, but with the `AUTHOR_NAME`, `AUTHOR_EMAIL`, `AUTHOR_URL`
 (respectively) env variables all can be overwritten.
 
+---
+
 #### `setup-license`
 Sets the license in the `package.json`. By default, this will be _"MIT"_, but
 can be overwritten by `LICENSE` env variable.
+
+---
 
 #### `setup-nvm`
 Populates a `.nvmrc` file with the a **Node.js** version and stricts the engine
@@ -105,8 +113,12 @@ By default, the current version will be used (determined with the `node
 --version` command), but this can be overwritten with the `NODE_VERSION` env
 variable.
 
+---
+
 #### `setup-package-lock`
 Creates an empty(ish) `package-lock.json` file to accompany the `package.json`.
+
+---
 
 ### npm related
 While the main goal of `n³` is to help with a project start, it also provides
