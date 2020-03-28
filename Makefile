@@ -4,7 +4,7 @@ ASSETS_DIR := ${N3_DIR}/assets
 JQ_SCRIPTS_DIR := ${N3_DIR}/jq-scripts
 TASKS_DIR := ${N3_DIR}/tasks
 
-PROJECT_DIR := ${PWD}
+PROJECT_DIR := ${CURDIR}
 PACKAGE_JSON := ${PROJECT_DIR}/package.json
 PACKAGE_LOCK := ${PROJECT_DIR}/package-lock.json
 
