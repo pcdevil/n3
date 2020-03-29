@@ -21,6 +21,7 @@ this solution.
     - **[`install-nodemon`](#install-nodemon)**
     - **[`install-test`](#install-test)**
   - **[Setup related](#setup-related)**
+    - **[`setup`](#setup)**
     - **[`setup-author`](#setup-author)**
     - **[`setup-license`](#setup-license)**
     - **[`setup-nvm`](#setup-nvm)**
@@ -91,6 +92,12 @@ with `.spec.js` suffix, and the second one is `test:watch` which does the same
 but in watch mode.
 
 ### Setup related
+
+#### `setup`
+This tasks act as a shorthand: it runs all available setup tasks (listed
+bellow).
+
+---
 
 #### `setup-author`
 Sets the author inside the `package.json`. There are three available information

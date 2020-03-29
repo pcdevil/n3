@@ -22,10 +22,13 @@ include ${TASKS_DIR}/setup-nvm.mk
 include ${TASKS_DIR}/setup-package-lock.mk
 include ${TASKS_DIR}/setup-start.mk
 
-.PHONY: help
+.PHONY: help setup
 
 help:
 	@fgrep -h "##" ${MAKEFILE_LIST} | fgrep -v fgrep | sed -e 's/\\$$//' -e 's/:.*#/: #/' | column -t -s '##'
+
+setup: ## run all setup related tasks
+setup: setup-author setup-license setup-nvm setup-package-lock setup-start
 
 define run-jq-script-on-file =
 	jq \
