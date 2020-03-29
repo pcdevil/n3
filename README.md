@@ -25,6 +25,7 @@ this solution.
     - **[`setup-license`](#setup-license)**
     - **[`setup-nvm`](#setup-nvm)**
     - **[`setup-package-lock`](#setup-package-lock)**
+    - **[`setup-start`](#setup-start)**
   - **[npm related](#npm-related)**
 - **[License](#license)**
 
@@ -117,6 +118,12 @@ variable.
 
 #### `setup-package-lock`
 Creates an empty(ish) `package-lock.json` file to accompany the `package.json`.
+
+---
+
+#### `setup-start`
+Sets the start script inside the `package.json` to run the `main` entrypoint of
+the project with **Node.js**.
 
 ---
 

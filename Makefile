@@ -20,6 +20,7 @@ include ${TASKS_DIR}/setup-author.mk
 include ${TASKS_DIR}/setup-license.mk
 include ${TASKS_DIR}/setup-nvm.mk
 include ${TASKS_DIR}/setup-package-lock.mk
+include ${TASKS_DIR}/setup-start.mk
 
 .PHONY: help
 
