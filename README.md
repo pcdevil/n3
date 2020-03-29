@@ -113,9 +113,9 @@ author property.
 
 ##### Example
 ```bash
-$ git config --global user.name "jakab.gipsz"
-$ git config --global user.email "jakab.gipsz@example.org"
-$ git config --global user.url "https://www.example.org"
+$ git config user.name "jakab.gipsz"
+$ git config user.email "jakab.gipsz@example.org"
+$ git config user.url "https://www.example.org"
 $
 $ n3 setup-author
 $ cat package.json
