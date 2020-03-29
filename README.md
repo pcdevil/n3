@@ -32,7 +32,7 @@ this solution.
 
 ## Prerequires
 To use it make sure the following application are installed on the system:
-- [git] (for install)
+- [Git]
 - [make]
 - [Node.js]
 - [jq]
@@ -102,8 +102,32 @@ bellow).
 #### `setup-author`
 Sets the author inside the `package.json`. There are three available information
 to be determined: _name_, _email_ and _url_ - by default the task invokes
-**git** to get them, but with the `AUTHOR_NAME`, `AUTHOR_EMAIL`, `AUTHOR_URL`
-(respectively) env variables all can be overwritten.
+**Git** to get them from the user config, but with the `AUTHOR_NAME`,
+`AUTHOR_EMAIL`, `AUTHOR_URL` env variables all can be overwritten.
+
+While the `user.url` is not a standard **Git** configuration key, there is no
+disadvantage setting it and using for this scenario.
+
+If a **Git** config (or env) variable is empty then it will be skipped from the
+author property.
+
+##### Example
+```bash
+$ git config --global user.name "jakab.gipsz"
+$ git config --global user.email "jakab.gipsz@example.org"
+$ git config --global user.url "https://www.example.org"
+$
+$ n3 setup-author
+$ cat package.json
+# ...
+  "author": {
+    "name": "jakab.gipsz",
+    "email": "jakab.gipsz@example.org",
+    "url": "https://www.example.org"
+  }
+}
+$
+```
 
 ---
 
@@ -155,7 +179,7 @@ Available under the [MIT license](LICENSE.md).
 [1]: https://github.com/tj/n
 [Chai]: https://www.chaijs.com/
 [ESLint]: https://eslint.org/
-[git]: https://git-scm.com/
+[Git]: https://git-scm.com/
 [Google's config]: https://github.com/google/eslint-config-google
 [jq]: https://stedolan.github.io/jq/
 [make]: https://www.gnu.org/software/make/
