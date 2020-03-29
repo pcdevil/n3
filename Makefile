@@ -38,8 +38,9 @@ define run-jq-script-on-file =
 endef
 
 define set-package-json-with-jq =
+	$(eval TEMP_FILE := $(shell mktemp))
 	$(eval INPUT_FILE := ${PACKAGE_JSON})
-	$(eval OUTPUT_FILE := $(shell mktemp))
+	$(eval OUTPUT_FILE := ${TEMP_FILE})
 	$(run-jq-script-on-file)
-	mv ${OUTPUT_FILE} ${INPUT_FILE}
+	mv ${TEMP_FILE} ${PACKAGE_JSON}
 endef
