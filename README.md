@@ -14,7 +14,7 @@ this solution.
 - **[Installation](#installation)**
 - **[Usage](#usage)**
 - **[Tasks](#tasks)**
-  - **[General purposes](#general-purposes)**
+  - **[General purpose](#general-purpose)**
     - **[`help`](#help)**
   - **[Install related](#install-related)**
     - **[`install-lint`](#install-lint)**
@@ -57,7 +57,7 @@ Because of the nature of a [Makefile] all functionalities are considered as a
 task and can be executed in one call after each other. This creates a very rapid
 bootstrap for a new application.
 
-### General purposes
+### General purpose
 
 #### `help`
 Prints the available tasks with a brief description next to them.
