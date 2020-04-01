@@ -8,8 +8,6 @@ PROJECT_DIR := ${CURDIR}
 PACKAGE_JSON := ${PROJECT_DIR}/package.json
 PACKAGE_LOCK := ${PROJECT_DIR}/package-lock.json
 
-TEMP_FILE := $(shell mktemp)
-
 NODE = $(shell which node)
 
 default: help
@@ -40,6 +38,7 @@ define run-jq-script-on-file =
 endef
 
 define set-package-json-with-jq =
+	$(eval TEMP_FILE := $(shell mktemp))
 	$(eval INPUT_FILE := ${PACKAGE_JSON})
 	$(eval OUTPUT_FILE := ${TEMP_FILE})
 	$(run-jq-script-on-file)
