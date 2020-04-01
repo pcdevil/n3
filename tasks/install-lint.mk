@@ -12,6 +12,5 @@ install-lint: .install-lint-packages .install-lint-copy-setup .install-lint-npm-
 	cp ${ASSETS_DIR}/eslintrc.json ${PROJECT_DIR}/.eslintrc
 
 .install-lint-npm-tasks:
-.install-lint-npm-tasks: JQ_SCRIPT_FILE := set-lint-task.jq
-.install-lint-npm-tasks:
+	$(eval JQ_SCRIPT_FILE := set-lint-task.jq)
 	$(set-package-json-with-jq)

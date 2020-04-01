@@ -5,6 +5,5 @@ export AUTHOR_EMAIL ?= $(shell git config user.email)
 export AUTHOR_URL ?= $(shell git config user.url)
 
 setup-author: ## sets the author in the package.json
-setup-author: JQ_SCRIPT_FILE := set-author.jq
-setup-author:
+	$(eval JQ_SCRIPT_FILE := set-author.jq)
 	$(set-package-json-with-jq)
