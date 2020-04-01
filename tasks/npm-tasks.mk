@@ -1,7 +1,7 @@
 .PHONY: l s s-w t t-w
 .PHONY: lint start start-watch test test-watch
 
-NPM := $(shell which npm)
+NPM = $(shell which npm)
 
 lint: ## run the "lint" npm task
 lint: NPM_TASK := lint

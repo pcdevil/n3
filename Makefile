@@ -10,7 +10,7 @@ PACKAGE_LOCK := ${PROJECT_DIR}/package-lock.json
 
 TEMP_FILE := $(shell mktemp)
 
-NODE := $(shell which node)
+NODE = $(shell which node)
 
 default: help
 
