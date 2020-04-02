@@ -52,6 +52,9 @@ $ echo 'alias n3="make --makefile=~/.n3/Makefile"' >>.bashrc # .fishrc, .zshrc
 After the install (and opening a new interactive shell) calling the `n3` will
 start the application.
 
+The entrypoint of `n3` is a `Makefile` - this means all tasks can be chained and
+the behaviour can be modifid of certain tasks via environment variables upon
+calling.
 
 ## Tasks
 Because of the nature of a [Makefile] all functionalities are considered as a
