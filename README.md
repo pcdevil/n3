@@ -69,6 +69,8 @@ Prints the available tasks with a brief description next to them.
 This is the **default task**, which means it will run if no task is given to
 `n³`.
 
+---
+
 #### `sort-package-json`
 While some tasks modifies the `package.json`, they always put the new content at
 the end of the config. This tasks sorts the keys to a more organised way to make
