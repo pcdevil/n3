@@ -8,6 +8,7 @@ PROJECT_DIR := ${CURDIR}
 PACKAGE_JSON := ${PROJECT_DIR}/package.json
 PACKAGE_LOCK := ${PROJECT_DIR}/package-lock.json
 
+JQ = $(shell which jq)
 NODE = $(shell which node)
 
 default: help
@@ -32,7 +33,7 @@ setup: ## run all setup related tasks
 setup: setup-author setup-license setup-nvm setup-package-lock setup-start
 
 define run-jq-script-on-file =
-	jq \
+	$(JQ) \
 		--from-file ${JQ_SCRIPTS_DIR}/${JQ_SCRIPT_FILE} \
 		--raw-output \
 		${INPUT_FILE}
