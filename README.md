@@ -16,6 +16,7 @@ this solution.
 - **[Tasks](#tasks)**
   - **[General purpose](#general-purpose)**
     - **[`help`](#help)**
+    - **[`sort-package-json`](#sort-package-json)**
   - **[Install related](#install-related)**
     - **[`install-lint`](#install-lint)**
     - **[`install-nodemon`](#install-nodemon)**
@@ -64,6 +65,39 @@ Prints the available tasks with a brief description next to them.
 
 This is the **default task**, which means it will run if no task is given to
 `n³`.
+
+#### `sort-package-json`
+While some tasks modifies the `package.json`, they always put the new content at
+the end of the config. This tasks sorts the keys to a more organised way to make
+the json more readable.
+
+When combined with other tasks, the order matters and therefore it is adviced to
+put this task at the end of the list.
+
+The order of the keys:
+- `name`
+- `version`
+- `description`
+- `keywords`
+- `main`
+- `bin`
+- `exports` _(all subkeys will be sorted in alphabet order)_
+- `scripts` _(all subkeys will be sorted in alphabet order)_
+- `engines`
+- `private`
+- `author`
+- `contributors`
+- `repository`
+- `bugs`
+- `homepage`
+- `license`
+- `devDependencies`
+- `peerDependencies`
+- `dependencies`
+- **_any other key in alphabet order_**
+
+If a listed property is not present then it won't be added to the new list, and
+similarly, if an existing property has only `null` value it will be discarded.
 
 ### Install related
 
