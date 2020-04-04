@@ -206,6 +206,8 @@ Below you can see the list of the tasks:
 
 | Task name (alias)     | Equivalent **npm** command |
 | --------------------- | -------------------------- |
+| `build` (`b`)         | `npm run build`            |
+| `build-watch` (`b-w`) | `npm run build:watch`      |
 | `lint` (`l`)          | `npm run lint`             |
 | `start` (`s`)         | `npm start`                |
 | `start-watch` (`s-w`) | `npm run start:watch`      |

@@ -1,7 +1,23 @@
-.PHONY: l s s-w t t-w
-.PHONY: lint start start-watch test test-watch
+.PHONY: b b-w l s s-w t t-w
+.PHONY: build build-watch lint start start-watch test test-watch
 
 NPM = $(shell which npm)
+
+build: ## run the "build" npm task
+build: NPM_TASK := build
+build:
+	$(npm-task)
+
+b: ##  -> build
+b: build
+
+build-watch: ## run the "build:watch" npm task
+build-watch: NPM_TASK := build:watch
+build-watch:
+	$(npm-task)
+
+b-w: ##  -> build-watch
+b-w: build-watch
 
 lint: ## run the "lint" npm task
 lint: NPM_TASK := lint
