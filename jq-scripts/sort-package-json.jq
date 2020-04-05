@@ -18,6 +18,8 @@ def conditional_key_sorting:
 	keywords,
 	main,
 	bin,
+	types,
+	files,
 	exports: (.exports | conditional_key_sorting),
 	scripts: (.scripts | conditional_key_sorting),
 	engines,
