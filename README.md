@@ -120,15 +120,19 @@ Additionally it adds a `start:watch` task in the `package.json` as well.
 ---
 
 #### `install-test`
-Installs the [Mocha] test framework, [Chai] assertion library, [Sinon.JS]
-mocking library along with [sinon-chai] custom assertions to bundle them
-together.
+Installs a test framework depending on the `TEST_FRAMEWORK` env variable:
+- If the value is `ava`, then [AVA] test framework will be installed
+- If the variable is not present or the value is anything else, [Mocha] with
+  [Chai] assertion library, [Sinon.JS] and [sinon-chai] custom assertions
+  packages will be installed
 
-A simple setup script will be created also inside the `test/` folder, and two
-task will be created in the `package.json`: the first one is `test` which runs
-the mocha framework including the setup and with the files inside `test/` folder
-with `.spec.js` suffix, and the second one is `test:watch` which does the same
-but in watch mode.
+After installation, two new tasks will be created in the `package.json`: the
+first one is `test` which runs the framework on files with `.spec.js` suffix
+inside `test/` folder, while the second, `test:watch` will do the same but in
+watch mode.
+
+In case of Mocha, a simple setup script will be also created inside the `test/`
+folder.
 
 ### Setup related
 
@@ -218,6 +222,7 @@ Below you can see the list of the tasks:
 Available under the [MIT license](LICENSE.md).
 
 [1]: https://github.com/tj/n
+[AVA]: https://github.com/avajs/ava
 [Chai]: https://www.chaijs.com/
 [ESLint]: https://eslint.org/
 [Git]: https://git-scm.com/
