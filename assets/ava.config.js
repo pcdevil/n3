@@ -1,3 +1,5 @@
+const watchMode = !!process.env.WATCH_MODE;
+
 export default {
 	failFast: true,
 	failWithoutAssertions: false,
@@ -7,5 +9,6 @@ export default {
 	ignoredByWatcher: [
 		'tmp/**/*',
 	],
-	verbose: true,
+	verbose: !watchMode,
+	watch: watchMode,
 }
