@@ -13,6 +13,9 @@ this solution.
 - **[Prerequires](#prerequires)**
 - **[Installation](#installation)**
 - **[Usage](#usage)**
+- **[Examples](#examples)**
+  - **[Create a new project and configure package.json with sorting](#create-a-new-project-and-configure-packagejson-with-sorting)**
+  - **[Setup AVA test framework and commit changes](#setup-ava-test-framework-and-commit-changes)**
 - **[Tasks](#tasks)**
   - **[General purpose](#general-purpose)**
     - **[`help`](#help)**
@@ -55,6 +58,67 @@ start the application.
 The entrypoint of `n3` is a `Makefile` - this means all tasks can be chained and
 the behaviour can be modifid of certain tasks via environment variables upon
 calling.
+
+## Examples
+
+### Create a new project and configure package.json with sorting
+An exhaustive example how to bootstrap a new application from the ground with
+the help of `n³`:
+
+```bash
+$ # setup
+$ mkdir my-awesome-project
+$ cd my-awesome-project
+$ git init
+$ git config user.name "jakab.gipsz"
+$ git config user.email "jakab.gipsz@example.org"
+$ git config user.url "https://www.example.org"
+
+$ # act
+$ npm init --yes
+$ n3 setup-author setup-license setup-nvm setup-package-lock sort-package-json
+
+$ # assert
+$ ls -1 --almost-all
+.git
+.nvmrc
+package.json
+package-lock.json
+$ cat package.json
+{
+  "name": "my-awesome-project",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "13.12.0"
+  },
+  "author": {
+    "name": "jakab.gipsz",
+    "email": "jakab.gipsz@example.org",
+    "url": "https://www.example.org"
+  },
+  "license": "MIT"
+}
+$ git diff # inspect the modified files
+$ git add .
+$ git commit --message "build(my-awesome-project): initial commit"
+```
+
+### Setup AVA test framework and commit changes
+In the following example you see how to specify the test framework for the
+`install-lint` task and replace [Mocha] with [AVA]:
+
+```bash
+$ TEST_FRAMEWORK=ava n3 install-test
+$ git diff # inspect the modified files
+$ git add .
+$ git commit --message "build(ava): add test framework"
+```
 
 ## Tasks
 Because of the nature of a [Makefile] all functionalities are considered as a
@@ -134,6 +198,8 @@ watch mode.
 In case of Mocha, a simple setup script will be also created inside the `test/`
 folder.
 
+> See **[Examples](#examples)** to see behaviour in real life situation
+
 ### Setup related
 
 #### `setup`
@@ -154,23 +220,7 @@ disadvantage setting it and using for this scenario.
 If a **Git** config (or env) variable is empty then it will be skipped from the
 author property.
 
-##### Example
-```bash
-$ git config user.name "jakab.gipsz"
-$ git config user.email "jakab.gipsz@example.org"
-$ git config user.url "https://www.example.org"
-$
-$ n3 setup-author
-$ cat package.json
-# ...
-  "author": {
-    "name": "jakab.gipsz",
-    "email": "jakab.gipsz@example.org",
-    "url": "https://www.example.org"
-  }
-}
-$
-```
+> See **[Examples](#examples)** to see behaviour in real life situation
 
 ---
 
