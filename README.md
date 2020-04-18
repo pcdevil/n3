@@ -150,6 +150,9 @@ The order of the keys:
 - `keywords`
 - `main`
 - `bin`
+- `type`
+- `types`
+- `files`
 - `exports` _(all subkeys will be sorted in alphabet order)_
 - `scripts` _(all subkeys will be sorted in alphabet order)_
 - `engines`
