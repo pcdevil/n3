@@ -1,1 +1,14 @@
-{ name, version, lockfileVersion: 1, requires: true, dependencies: {} }
+{
+	name,
+	version,
+	lockfileVersion: 2,
+	requires: true,
+	packages: {
+		"": {
+			name,
+			version,
+			license,
+			engines
+		}
+	},
+}
