@@ -1,1 +1,1 @@
-.scripts.start = "node $npm_package_main"
+.scripts.start = ("node " + .main)
