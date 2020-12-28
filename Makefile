@@ -24,11 +24,11 @@ include ${TASKS_DIR}/setup-package-lock.mk
 include ${TASKS_DIR}/setup-start.mk
 include ${TASKS_DIR}/sort-package-json.mk
 
-.PHONY: help setup
-
+.PHONY: help
 help:
 	@fgrep -h "##" ${MAKEFILE_LIST} | fgrep -v fgrep | sed -e 's/\\$$//' -e 's/:.*#/: #/' | column -t -s '##'
 
+.PHONY: setup
 setup: ## run all setup related tasks
 setup: setup-author setup-license setup-nvm setup-package-lock setup-start
 
