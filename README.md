@@ -18,6 +18,7 @@ this solution.
   - **[Setup AVA test framework and commit changes](#setup-ava-test-framework-and-commit-changes)**
 - **[Tasks](#tasks)**
   - **[General purpose](#general-purpose)**
+    - **[`create-editorconfig`](#create-editorconfig)**
     - **[`help`](#help)**
     - **[`sort-package-json`](#sort-package-json)**
   - **[Install related](#install-related)**
@@ -126,6 +127,9 @@ task and can be executed in one call after each other. This creates a very rapid
 bootstrap for a new application.
 
 ### General purpose
+
+#### `create-editorconfig`
+Creates a [EditorConfig] file to make consistent styling accross the project.
 
 #### `help`
 Prints the available tasks with a brief description next to them.
@@ -277,6 +281,7 @@ Available under the [MIT license](LICENSE.md).
 [1]: https://github.com/tj/n
 [AVA]: https://github.com/avajs/ava
 [Chai]: https://www.chaijs.com/
+[EditorConfig]: https://editorconfig.org/
 [ESLint]: https://eslint.org/
 [Git]: https://git-scm.com/
 [Google's config]: https://github.com/google/eslint-config-google
