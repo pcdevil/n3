@@ -14,3 +14,8 @@ trim_trailing_whitespace = true
 # reduce json indentation for better readability
 [{*.jq,*.json,*.jsonc}]
 tab_width = 2
+
+# keep space indentation for markdown files
+[*.md]
+indent_size = 2
+indent_style = space
