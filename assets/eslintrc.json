@@ -18,9 +18,7 @@
 	"parserOptions": {
 		"ecmaVersion": 2019
 	},
-	"plugins": [
-		"jsdoc"
-	],
+	"plugins": [],
 	"rules": {
 		"indent": ["error", "tab"],
 		"max-len": ["error", 120],
@@ -32,41 +30,6 @@
 		"operator-linebreak": ["error", "before"],
 		"require-jsdoc": "off",
 		"space-before-function-paren": ["error", "always"],
-		"valid-jsdoc": "off",
-
-		"jsdoc/check-alignment": "warning",
-		"jsdoc/check-examples": "warning",
-		"jsdoc/check-indentation": "warning",
-		"jsdoc/check-param-names": "warning",
-		"jsdoc/check-syntax": "warning",
-		"jsdoc/check-tag-names": "warning",
-		"jsdoc/check-types": "warning",
-		"jsdoc/implements-on-classes": "warning",
-		"jsdoc/match-description": "warning",
-		"jsdoc/newline-after-description": "warning",
-		"jsdoc/no-types": "off",
-		"jsdoc/no-undefined-types": "warning",
-		"jsdoc/require-description": "warning",
-		"jsdoc/require-description-complete-sentence": "warning",
-		"jsdoc/require-example": "off",
-		"jsdoc/require-hyphen-before-param-description": "warning",
-		"jsdoc/require-jsdoc": "warning",
-		"jsdoc/require-param": "warning",
-		"jsdoc/require-param-description": "warning",
-		"jsdoc/require-param-name": "warning",
-		"jsdoc/require-param-type": "warning",
-		"jsdoc/require-returns": "off",
-		"jsdoc/require-returns-check": "warning",
-		"jsdoc/require-returns-description": "warning",
-		"jsdoc/require-returns-type": "warning",
-		"jsdoc/valid-types": "warning"
-	},
-	"settings": {
-		"jsdoc": {
-			"tagNamePreference": {
-				"augments": "extends",
-				"fires": "emits"
-			}
-		}
+		"valid-jsdoc": "off"
 	}
 }

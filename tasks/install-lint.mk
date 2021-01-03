@@ -9,7 +9,10 @@ install-lint: .install-lint-packages .install-lint-copy-setup .install-lint-npm-
 
 .PHONY: .install-lint-copy-setup
 .install-lint-copy-setup:
-	cp ${ASSETS_DIR}/eslintrc.json ${PROJECT_DIR}/.eslintrc
+	$(eval JQ_SCRIPT_FILE := merge-lint-configs.jq)
+	$(eval JQ_INPUT_FILES := ${ASSETS_DIR}/eslintrc.json ${ASSETS_DIR}/eslintrc.plugin-jsdoc.json)
+	$(eval JQ_ARGUMENTS := --slurp)
+	$(run-jq-script-on-file) >${PROJECT_DIR}/.eslintrc
 
 .PHONY: .install-lint-npm-tasks
 .install-lint-npm-tasks:
