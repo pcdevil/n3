@@ -37,12 +37,12 @@ define run-jq-script-on-file =
 	$(JQ) \
 		--from-file ${JQ_SCRIPTS_DIR}/${JQ_SCRIPT_FILE} \
 		--raw-output \
-		${INPUT_FILE}
+		${JQ_INPUT_FILE}
 endef
 
 define set-package-json-with-jq =
 	$(eval TEMP_FILE := $(shell mktemp))
-	$(eval INPUT_FILE := ${PACKAGE_JSON})
+	$(eval JQ_INPUT_FILE := ${PACKAGE_JSON})
 	$(run-jq-script-on-file) >${TEMP_FILE}
 	cat ${TEMP_FILE} >${PACKAGE_JSON}
 	rm ${TEMP_FILE}
