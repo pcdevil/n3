@@ -1,3 +1,5 @@
+#!/usr/bin/make -f
+
 N3_MAKE := $(lastword ${MAKEFILE_LIST})
 N3_DIR := $(shell dirname $(realpath ${N3_MAKE}))
 ASSETS_DIR := ${N3_DIR}/assets

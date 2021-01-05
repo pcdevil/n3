@@ -45,11 +45,16 @@ To use it make sure the following application are installed on the system:
 ## Installation
 Use the following steps to install it:
 - Clone the repository
-- Add make alias to `.bashrc` or your default shell's _runcom_ file
+- Make the entrypoint of `n³` available:
+  - Method 1: Add make alias to `.bashrc` or your default shell's _runcom_ file
+  - Method 2: Add to a folder listed in your `$PATH`
 
 ```bash
 $ git clone git@github.com:pcdevil/n3.git ~/.n3
+$ # method 1:
 $ echo 'alias n3="make --makefile=~/.n3/Makefile"' >>.bashrc # .fishrc, .zshrc
+$ # method 2:
+$ ln -s ~/.n3/Makefile ~/bin/n3 # or any other folder already added to $PATH
 ```
 
 ## Usage
