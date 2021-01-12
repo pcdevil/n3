@@ -117,11 +117,11 @@ $ git commit --message "build(my-awesome-project): initial commit"
 
 ### Setup AVA test framework and commit changes
 In the following example you see how to specify the test framework for the
-`install-lint` task and replace [Mocha] with [AVA]:
+`install-test` task and replace [Mocha] with [AVA]:
 
 ```bash
-$ TEST_FRAMEWORK=ava n3 install-test
-$ git diff # inspect the modified files
+$ n3 install-test TEST_FRAMEWORK=ava
+$ git diff # inspect the modified files, see the ava test framework is used
 $ git add .
 $ git commit --message "build(ava): add test framework"
 ```
