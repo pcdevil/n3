@@ -22,7 +22,9 @@
 	"rules": {
 		"indent": ["error", "tab"],
 		"max-len": "off",
-		"no-tabs": "off",
+		"no-tabs": ["error", {
+			"allowIndentationTabs": true
+		}],
 		"object-curly-spacing": ["error", "always", {
 			"arraysInObjects": false,
 			"objectsInObjects": true
