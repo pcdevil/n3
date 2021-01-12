@@ -16,6 +16,7 @@ this solution.
 - **[Examples](#examples)**
   - **[Create a new project and configure package.json with sorting](#create-a-new-project-and-configure-packagejson-with-sorting)**
   - **[Setup AVA test framework and commit changes](#setup-ava-test-framework-and-commit-changes)**
+  - **[Setup ESLint framework without JSDoc plugin](#setup-eslint-framework-without-jsdoc-plugin)**
 - **[Tasks](#tasks)**
   - **[General purpose](#general-purpose)**
     - **[`create-editorconfig`](#create-editorconfig)**
@@ -126,6 +127,18 @@ $ git add .
 $ git commit --message "build(ava): add test framework"
 ```
 
+### Setup ESLint framework without JSDoc plugin
+While [JSDoc] can be powerful to easily create documentations of a project, it
+can be undesired in certain repositories. For this reason the `install-lint`
+task has an option to disable this feature:
+
+```bash
+$ n3 install-lint LINT_PLUGINS=
+$ git diff # inspect the modified files, see the lack of jsdoc plugin
+$ git add .
+$ git commit --message "build(eslint): add linting framework"
+```
+
 ## Tasks
 Because of the nature of a [Makefile] all functionalities are considered as a
 task and can be executed in one call after each other. This creates a very rapid
@@ -191,6 +204,11 @@ maintained.
 To achieve this, the task creates an `.eslintrc` config file to bootstrap and
 fine-tune the config, and it adds a `lint` task in the `package.json` file to
 run the linter.
+
+The JSDoc linting plugin can be turned off by setting the `LINT_PLUGINS`
+environment variable empty.
+
+> See **[Examples](#examples)** to see the illustration of it
 
 ---
 
@@ -296,6 +314,7 @@ Available under the [MIT license](LICENSE.md).
 [Git]: https://git-scm.com/
 [Google's config]: https://github.com/google/eslint-config-google
 [jq]: https://stedolan.github.io/jq/
+[JSDoc]: https://jsdoc.app/
 [JSDoc linting]: https://github.com/gajus/eslint-plugin-jsdoc
 [make]: https://www.gnu.org/software/make/
 [Makefile]: https://www.gnu.org/software/make/manual/make.html#Writing-Makefiles
