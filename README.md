@@ -183,9 +183,14 @@ similarly, if an existing property has only `null` value it will be discarded.
 ### Install related
 
 #### `install-lint`
-Installs [ESLint] and [Google's config] as dev-dependency. Creates an
-`.eslintrc` config file to bootstrap and fine-tune the config and it also adds a
-`lint` task in the `package.json` file to run the linter.
+Installs [ESLint] and [Google's config] as dev-dependency, and as the
+[require-jsdoc] rule is deprecated by **ESLint**, it also installs the
+[JSDoc linting plugin] to ensure the installed dependencies are properly
+maintained.
+
+To achieve this, the task creates an `.eslintrc` config file to bootstrap and
+fine-tune the config, and it adds a `lint` task in the `package.json` file to
+run the linter.
 
 ---
 
@@ -291,10 +296,12 @@ Available under the [MIT license](LICENSE.md).
 [Git]: https://git-scm.com/
 [Google's config]: https://github.com/google/eslint-config-google
 [jq]: https://stedolan.github.io/jq/
+[JSDoc linting]: https://github.com/gajus/eslint-plugin-jsdoc
 [make]: https://www.gnu.org/software/make/
 [Makefile]: https://www.gnu.org/software/make/manual/make.html#Writing-Makefiles
 [Mocha]: https://mochajs.org/
 [Node.js]: https://nodejs.org/
 [nodemon]: https://nodemon.io/
+[require-jsdoc]: https://eslint.org/docs/rules/require-jsdoc#require-jsdoc-comments-require-jsdoc
 [Sinon.JS]: https://sinonjs.org/
 [sinon-chai]: https://github.com/domenic/sinon-chai
