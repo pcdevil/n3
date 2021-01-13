@@ -127,7 +127,7 @@ $ git add .
 $ git commit --message "build(ava): add test framework"
 ```
 
-### Setup ESLint framework without JSDoc plugin
+### Setup ESLint framework without optional stylings
 While [JSDoc] can be powerful to easily create documentations of a project, it
 can be undesired in certain repositories. For this reason the `install-lint`
 task has an option to disable this feature:
@@ -196,19 +196,26 @@ similarly, if an existing property has only `null` value it will be discarded.
 ### Install related
 
 #### `install-lint`
-Installs [ESLint] and [Google's config] as dev-dependency, and as the
-[require-jsdoc] rule is deprecated by **ESLint**, it also installs the
-[JSDoc linting plugin] to ensure the installed dependencies are properly
-maintained.
+Installs [ESLint] as dev-dependency, and also adds [Google's config], and the
+[JSDoc linting plugin] as an extension for it.
 
 To achieve this, the task creates an `.eslintrc` config file to bootstrap and
-fine-tune the config, and it adds a `lint` task in the `package.json` file to
-run the linter.
+fine-tune the config, and adds a `lint` task in the `package.json` file to run
+the linter.
 
-The JSDoc linting plugin can be turned off by setting the `LINT_PLUGINS`
-environment variable empty.
+The config from Google is made the default styleguide from `n³` to give a
+styling baseline for the project. However, it made to be optional, as a project
+can rely on other popular styleguides. To prevent the installation of this
+config, simply set the `LINT_CONFIGS` environment variable to empty.
 
-> See **[Examples](#examples)** to see the illustration of it
+The JSDoc linting plugin is added in the sense to ensure better maintainability
+with explained behaviour of the code and the [require-jsdoc] rule is deprecated
+by **ESLint**, this plugin is needed to match the modern usage of **JSDoc**.
+Similarly to the Google's config, it can be also turned off by setting the
+`LINT_PLUGINS` environment variable empty.
+
+> See **[Examples](#examples)** to see the illustration of turning off the
+> optional stylings
 
 ---
 

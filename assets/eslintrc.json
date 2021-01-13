@@ -4,8 +4,7 @@
 		"node": true
 	},
 	"extends": [
-		"eslint:recommended",
-		"google"
+		"eslint:recommended"
 	],
 	"overrides": [
 		{
@@ -21,17 +20,10 @@
 	"plugins": [],
 	"rules": {
 		"indent": ["error", "tab"],
-		"max-len": "off",
 		"no-tabs": ["error", {
 			"allowIndentationTabs": true
 		}],
-		"object-curly-spacing": ["error", "always", {
-			"arraysInObjects": false,
-			"objectsInObjects": true
-		}],
-		"operator-linebreak": ["error", "before"],
 		"require-jsdoc": "off",
-		"space-before-function-paren": ["error", "always"],
 		"valid-jsdoc": "off"
 	}
 }
