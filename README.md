@@ -203,10 +203,12 @@ To achieve this, the task creates an `.eslintrc` config file to bootstrap and
 fine-tune the config, and adds a `lint` task in the `package.json` file to run
 the linter.
 
-The config from Google is made the default styleguide from `n³` to give a
-styling baseline for the project. However, it made to be optional, as a project
-can rely on other popular styleguides. To prevent the installation of this
-config, simply set the `LINT_CONFIGS` environment variable to empty.
+The default styleguide config set by `n³` is from Google with a few additional
+changes on their baseline, such as tab indentation and turned off restriction on
+the maximum line length. However, their config is made to be optional, and can
+be turned off or replaced by the [Standard Style]. For that, simply set the
+`LINT_CONFIGS` environment variable to either `google` or `standard`, and to
+prevent any config installation, set it to empty string.
 
 The JSDoc linting plugin is added in the sense to ensure better maintainability
 with explained behaviour of the code and the [require-jsdoc] rule is deprecated
@@ -329,5 +331,6 @@ Available under the [MIT license](LICENSE.md).
 [Node.js]: https://nodejs.org/
 [nodemon]: https://nodemon.io/
 [require-jsdoc]: https://eslint.org/docs/rules/require-jsdoc#require-jsdoc-comments-require-jsdoc
+[Standard Style]: https://standardjs.com/
 [Sinon.JS]: https://sinonjs.org/
 [sinon-chai]: https://github.com/domenic/sinon-chai
