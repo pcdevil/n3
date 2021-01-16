@@ -4,5 +4,4 @@ export AUTHOR_URL ?= $(shell git config user.url)
 
 .PHONY: setup-author
 setup-author: ## sets the author in the package.json
-	$(eval JQ_SCRIPT_FILE := set-author.jq)
-	$(set-package-json-with-jq)
+	$(call run_jq_on_package-json,set-author)

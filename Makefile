@@ -35,18 +35,15 @@ help:
 setup: ## run all setup related tasks
 setup: setup-author setup-license setup-nvm setup-package-lock setup-start
 
-define run-jq-script-on-file =
-	$(JQ) \
-		--from-file ${JQ_SCRIPTS_DIR}/${JQ_SCRIPT_FILE} \
+# run_jq [script file] [input file] [jq arguments]
+run_jq = $(JQ) \
+		--from-file ${JQ_SCRIPTS_DIR}/${1}.jq \
 		--raw-output \
-		${JQ_ARGUMENTS} \
-		${JQ_INPUT_FILES}
-endef
+		${3} \
+		${2}
 
-define set-package-json-with-jq =
-	$(eval TEMP_FILE := $(shell mktemp))
-	$(eval JQ_INPUT_FILES := ${PACKAGE_JSON})
-	$(run-jq-script-on-file) >${TEMP_FILE}
-	cat ${TEMP_FILE} >${PACKAGE_JSON}
-	rm ${TEMP_FILE}
-endef
+# run_jq_on_package-json [script file] [jq arguments]
+run_jq_on_package-json = TEMP_FILE=$(shell mktemp); \
+	$(call run_jq,${1},${PACKAGE_JSON},${2}) >$${TEMP_FILE}; \
+	cat $${TEMP_FILE} >${PACKAGE_JSON}; \
+	rm $${TEMP_FILE}

@@ -17,12 +17,8 @@ install-lint: .install-lint-packages .install-lint-copy-setup .install-lint-npm-
 
 .PHONY: .install-lint-copy-setup
 .install-lint-copy-setup:
-	$(eval JQ_SCRIPT_FILE := merge-lint-configs.jq)
-	$(eval JQ_INPUT_FILES := ${LINT_BASE_CONFIG_FILE} ${LINT_CONFIG_FILES} ${LINT_PLUGIN_FILES})
-	$(eval JQ_ARGUMENTS := --slurp)
-	$(run-jq-script-on-file) >${PROJECT_DIR}/.eslintrc
+	$(call run_jq,merge-lint-configs,${LINT_BASE_CONFIG_FILE} ${LINT_CONFIG_FILES} ${LINT_PLUGIN_FILES},--slurp) >${PROJECT_DIR}/.eslintrc
 
 .PHONY: .install-lint-npm-tasks
 .install-lint-npm-tasks:
-	$(eval JQ_SCRIPT_FILE := set-lint-task.jq)
-	$(set-package-json-with-jq)
+	$(call run_jq_on_package-json,set-lint-task)

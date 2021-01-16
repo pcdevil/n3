@@ -32,5 +32,4 @@ install-test: ${TEST_SUB_TASKS}
 
 .PHONY: .install-test-npm-tasks
 .install-test-npm-tasks:
-	$(eval JQ_SCRIPT_FILE := set-test-task-${TEST_JQ_SCRIPT_FILE_SUFFIX}.jq)
-	$(set-package-json-with-jq)
+	$(call run_jq_on_package-json,set-test-task-${TEST_JQ_SCRIPT_FILE_SUFFIX})
