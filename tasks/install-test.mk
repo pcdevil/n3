@@ -1,11 +1,15 @@
+TEST_FRAMEWORK ?= mocha
+
 ifeq (${TEST_FRAMEWORK},ava)
-TEST_JQ_SCRIPT_FILE_SUFFIX := ava
-TEST_NPM_PACKAGES := ava
-TEST_SUB_TASKS := .install-test-copy-ava-config
-else
-TEST_JQ_SCRIPT_FILE_SUFFIX := mocha
-TEST_NPM_PACKAGES := chai mocha sinon sinon-chai
-TEST_SUB_TASKS := .install-test-copy-mocha-setup
+TEST_JQ_SCRIPT_FILE = set-test-task-ava
+TEST_NPM_PACKAGES = ava
+TEST_SUB_TASKS = .install-test-copy-ava-config
+endif
+
+ifeq (${TEST_FRAMEWORK},mocha)
+TEST_JQ_SCRIPT_FILE = set-test-task-mocha
+TEST_NPM_PACKAGES = chai mocha sinon sinon-chai
+TEST_SUB_TASKS = .install-test-copy-mocha-setup
 endif
 
 .PHONY: install-test
@@ -32,4 +36,4 @@ install-test: ${TEST_SUB_TASKS}
 
 .PHONY: .install-test-npm-tasks
 .install-test-npm-tasks:
-	$(call run_jq_on_package-json,set-test-task-${TEST_JQ_SCRIPT_FILE_SUFFIX})
+	$(call run_jq_on_package-json,${TEST_JQ_SCRIPT_FILE})
